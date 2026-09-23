@@ -15,3 +15,16 @@ void printArray(const int (&arr)[10]){
     }
     std::cout << std::endl;
 }
+
+int main()
+{
+    srand(static_cast<unsigned int>(time(nullptr)));
+
+    int numbers[10];
+
+    std::cout << "Заполняем массив случайными числами" << std::endl;
+    fillArray(numbers);
+    printArray(numbers);
+
+    return 0;
+}
