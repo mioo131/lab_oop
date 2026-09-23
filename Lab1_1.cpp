@@ -16,6 +16,19 @@ void printArray(const int (&arr)[10]){
     std::cout << std::endl;
 }
 
+void swapElements(int (&arr)[10], const int& idx1, const int& idx2)
+{
+    if (idx1 < 0 || idx1 >= 10 || idx2 < 0 || idx2 >= 10)
+    {
+        std::cout << "swapElements: индекс вне диапазона" << std::endl;
+        return;
+    }
+
+    int temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+}
+
 int main()
 {
     srand(static_cast<unsigned int>(time(nullptr)));
@@ -24,6 +37,10 @@ int main()
 
     std::cout << "Заполняем массив случайными числами" << std::endl;
     fillArray(numbers);
+    printArray(numbers);
+
+    std::cout << "--- Меняем местами элементы [0] и [9] ---" << std::endl;
+    swapElements(numbers, 0, 9);
     printArray(numbers);
 
     return 0;
