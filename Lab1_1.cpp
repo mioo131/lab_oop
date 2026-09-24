@@ -2,7 +2,7 @@
 #include <cstdlib> 
 #include <ctime> 
 
-void fellArray(int (&arr)[10]){
+void fillArray(int (&arr)[10]){
     for (int& x : arr){
         x = rand() % 201 - 100;
     }
@@ -29,6 +29,14 @@ void swapElements(int (&arr)[10], const int& idx1, const int& idx2)
     arr[idx2] = temp;
 }
 
+void multiplyByTwo(int (&arr)[10])
+{
+    for (int& x : arr)
+    {
+        x *= 2;
+    }
+}
+
 int main()
 {
     srand(static_cast<unsigned int>(time(nullptr)));
@@ -41,6 +49,10 @@ int main()
 
     std::cout << "--- Меняем местами элементы [0] и [9] ---" << std::endl;
     swapElements(numbers, 0, 9);
+    printArray(numbers);
+
+    std::cout << "Умножаем каждый элемент на 2" << std::endl;
+    multiplyByTwo(numbers);
     printArray(numbers);
 
     return 0;
