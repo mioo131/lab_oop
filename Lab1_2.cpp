@@ -33,6 +33,8 @@ int main()
             return 1;
         }
 
+        int* arr = new int[n]{};
+
         std::cout << "Заполняем массив случайными числами от -20 до 20:" << std::endl;
         for (int i = 0; i < n; ++i)
         {
@@ -40,6 +42,22 @@ int main()
             std::cout << arr[i] << " ";
         }
         std::cout << std::endl;
-        
+
+        process(arr, n);
+
+        std::cout << "Результат после process():" << std::endl;
+        if (arr != nullptr)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                std::cout << arr[i] << " ";
+            }
+            std::cout << std::endl;
+        }
+        else
+        {
+        std::cout << "(массив пуст)" << std::endl;
+        }
+
         return 0;
 }
