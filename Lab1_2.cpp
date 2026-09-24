@@ -17,6 +17,8 @@ void process(int*& arr, int& size){
         std::cout << "Отрицательных элементов не найдено, массив не изменяется." << std::endl;
         return;
     }
+
+    std::cout << "Первый отрицательный элемент найден на индексе " << negIndex << std::endl;
 }
 
 int main()
@@ -30,6 +32,14 @@ int main()
             std::cout << "Размер массива должен быть положительным." << std::endl;
             return 1;
         }
-    
+
+        std::cout << "Заполняем массив случайными числами от -20 до 20:" << std::endl;
+        for (int i = 0; i < n; ++i)
+        {
+            arr[i] = rand() % 41 - 20;
+            std::cout << arr[i] << " ";
+        }
+        std::cout << std::endl;
+        
         return 0;
 }
